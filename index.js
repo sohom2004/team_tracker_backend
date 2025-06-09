@@ -8,12 +8,11 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: ["https://team-tracker-frontend-git-main-sohom2004s-projects.vercel.app"],
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 
-app.options('*', cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
